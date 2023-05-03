@@ -26,16 +26,12 @@ function App() {
 
     fetchData();
   }, []);
-  console.log(data);
+  // console.log(data);
   return isLoading ? (
     <p>Loading...</p>
   ) : (
     <Router>
       <div>
-        <img
-          src="https://lereacteur-vinted.netlify.app/static/media/hero.2c66d85a1335550c4518.jpg"
-          alt=""
-        />
         <div className="router">
           <Header />
 
@@ -44,6 +40,26 @@ function App() {
             <Route path="/Offers" element={<Offers data={data} />} />
           </Routes>
         </div>
+      </div>
+      <img
+        src="https://lereacteur-vinted.netlify.app/static/media/hero.2c66d85a1335550c4518.jpg"
+        alt=""
+      />
+      <div className="offers">
+        {data.offers.map((elem) => {
+          // console.log(elem.product_image.url);
+          return (
+            <section className="offer" key={elem._id}>
+              <section>
+                <div>
+                  <h1>{elem.product_name}</h1>
+                  <img src={elem.product_image.url} alt="" />
+                  <p>{elem.product_description}</p>
+                </div>
+              </section>
+            </section>
+          );
+        })}
       </div>
     </Router>
   );

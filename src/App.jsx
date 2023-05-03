@@ -32,19 +32,15 @@ function App() {
   ) : (
     <Router>
       <div>
-        <div className="router">
-          <Header />
-
+        <Header />
+        <div>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/Offers" element={<Offers data={data} />} />
           </Routes>
         </div>
       </div>
-      <img
-        src="https://lereacteur-vinted.netlify.app/static/media/hero.2c66d85a1335550c4518.jpg"
-        alt=""
-      />
+
       <div className="offers">
         {data.offers.map((elem) => {
           // console.log(elem.product_image.url);

@@ -10,7 +10,7 @@ const Offers = ({ data }) => {
       <div>
         {data.offers.map((elem) => {
           return (
-            <section key={elem._id}>
+            <section className="offerHeader" key={elem._id}>
               <h1>{elem.product_name}</h1>
               <p>{elem.product_description}</p>
             </section>

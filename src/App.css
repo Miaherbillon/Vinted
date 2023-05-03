@@ -60,4 +60,6 @@ img {
 .offer h1 {
   height: 70px;
   text-align: center;
+  color: rgb(18, 153, 135);
+  font-weight: bolder;
 }

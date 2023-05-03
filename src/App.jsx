@@ -35,14 +35,14 @@ function App() {
         <Header />
         <div>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home data={data} />} />
             {/* <Route path="/" element={<Offers data={data} />} /> */}
             <Route path="/Offers" element={<Offers data={data} />} />
           </Routes>
         </div>
       </div>
 
-      <div className="offers">
+      {/* <div className="offers">
         {data.offers.map((elem) => {
           // console.log(elem.product_image.url);
           return (
@@ -57,7 +57,7 @@ function App() {
             </section>
           );
         })}
-      </div>
+      </div> */}
     </Router>
   );
 }

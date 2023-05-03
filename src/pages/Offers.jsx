@@ -9,14 +9,15 @@ const Offers = ({ data }) => {
       </div>
       <div className="offers">
         {data.offers.map((elem) => {
-          // console.log(elem.product_image.url);
+          console.log(elem.product_details);
           return (
             <section className="offer" key={elem._id}>
               <section>
                 <div>
-                  <h1>{elem.product_name}</h1>
+                  <h1>{elem.owner.account.username} 🦊</h1>
                   <img src={elem.product_image.url} alt="" />
-                  <p>{elem.product_description}</p>
+                  <p>{elem.product_price} €</p>
+                  {/* <p>{elem.product_details}</p> */}
                 </div>
               </section>
             </section>

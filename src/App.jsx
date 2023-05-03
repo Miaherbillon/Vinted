@@ -34,6 +34,15 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Offers" element={<Offers data={data} />} />
       </Routes>
+      <div className="offerHeader">
+        {data.offers.map((elem) => {
+          return (
+            <>
+              <div key={elem._id}>{elem.product_name}</div>
+            </>
+          );
+        })}
+      </div>
     </Router>
   );
 }

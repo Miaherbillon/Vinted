@@ -10,9 +10,10 @@ const Offers = ({ data }) => {
       <div>
         {data.offers.map((elem) => {
           return (
-            <>
-              <div key={elem._id}>{elem.product_name}</div>
-            </>
+            <section key={elem._id}>
+              <h1>{elem.product_name}</h1>
+              <p>{elem.product_description}</p>
+            </section>
           );
         })}
       </div>

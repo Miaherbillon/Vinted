@@ -27,29 +27,22 @@ function App() {
     fetchData();
   }, []);
   console.log(data);
-  return (
+  return isLoading ? (
+    <p>Loading...</p>
+  ) : (
     <Router>
       <div>
-        <div className="router">
-          <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/Offers" element={<Offers data={data} />} />
-          </Routes>
-        </div>
-
         <img
           src="https://lereacteur-vinted.netlify.app/static/media/hero.2c66d85a1335550c4518.jpg"
           alt=""
         />
-        <div className="offerHeader">
-          {data.offers.map((elem) => {
-            return (
-              <>
-                <div key={elem._id}>{elem.product_name}</div>
-              </>
-            );
-          })}
+        <div className="router">
+          <Header />
+
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/Offers" element={<Offers data={data} />} />
+          </Routes>
         </div>
       </div>
     </Router>

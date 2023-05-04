@@ -1,10 +1,15 @@
+import { Link } from "react-router-dom";
+import Logo from "../assets/logo-antiguo.png";
+
 const header = () => {
   return (
     <section className="router">
-      <div className="header">
-        <p>JE SUIS LE HEADER</p>
-        <input type="search" placeholder="Je recherche" />
+      <div>
+        <Link to="/">
+          <img src={Logo} alt="" />
+        </Link>
       </div>
+      <input type="text" placeholder="Je recherche" />
     </section>
   );
 };

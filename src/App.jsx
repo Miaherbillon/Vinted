@@ -31,33 +31,11 @@ function App() {
     <p>Loading...</p>
   ) : (
     <Router>
-      <div>
-        <Header />
-        <div>
-          <Routes>
-            <Route path="/" element={<Home data={data} />} />
-            {/* <Route path="/" element={<Offers data={data} />} /> */}
-            <Route path="/Offers" element={<Offers data={data} />} />
-          </Routes>
-        </div>
-      </div>
-
-      {/* <div className="offers">
-        {data.offers.map((elem) => {
-          // console.log(elem.product_image.url);
-          return (
-            <section className="offer" key={elem._id}>
-              <section>
-                <div>
-                  <h1>{elem.product_name}</h1>
-                  <img src={elem.product_image.url} alt="" />
-                  <p>{elem.product_description}</p>
-                </div>
-              </section>
-            </section>
-          );
-        })}
-      </div> */}
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home data={data} />} />
+        <Route path="/Offers/:id" element={<Offers />} />
+      </Routes>
     </Router>
   );
 }

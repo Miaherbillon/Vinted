@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Logo from "../assets/logo-antiguo.png";
 
-const header = () => {
+const Header = () => {
   return (
     <>
       <div className="router">
@@ -21,4 +21,4 @@ const header = () => {
     </>
   );
 };
-export default header;
+export default Header;

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Header from "../components/Header";
 
 import OffersCard from "../components/offerCard";
 
@@ -27,6 +28,10 @@ const Home = () => {
     <p>Loading ... </p>
   ) : (
     <>
+      <img
+        src="https://lereacteur-vinted.netlify.app/static/media/hero.2c66d85a1335550c4518.jpg"
+        alt=""
+      />
       <div className="offers">
         {data.offers.map((elem) => {
           // console.log(elem.product_details);

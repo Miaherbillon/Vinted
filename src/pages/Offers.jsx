@@ -3,16 +3,16 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 
 const Offers = () => {
-  const [data, setData] = useState();
+  const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
-  const { id } = useParams;
+  const { id } = useParams();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://lereacteur-vinted-api.herokuapp.com/offers/${id}`
+          `https://lereacteur-vinted-api.herokuapp.com/offer/${id}`
         );
         setData(response.data);
         setIsLoading(false);
@@ -23,14 +23,26 @@ const Offers = () => {
 
     fetchData();
   }, [id]);
-
+  console.log(data);
   return isLoading ? (
     <p>Loading ...</p>
   ) : (
-    <div>
+    <section className="Offers">
       <img src={data.product_image.secure_url} alt="" />
-      <p>{data.product_price} €</p>
-    </div>
+      <div className="OfferDescription">
+        {data.product_details.map((details, index) => {
+          console.log(details);
+          const keyName = Object.keys(details)[0];
+          return (
+            <div className="OfferInfoDesc" key={index}>
+              <span>{keyName} : </span>
+              <span>{details[keyName]}</span>
+            </div>
+          );
+        })}
+        <div className="OfferPrince">{data.product_price} €</div>
+      </div>
+    </section>
   );
 };
 export default Offers;

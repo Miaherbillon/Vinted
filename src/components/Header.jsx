@@ -13,11 +13,8 @@ const Header = () => {
         <input type="text" placeholder="Je recherche" />
         <button>S'inscrire</button>
         <button>Se connecter</button>
+        <button className="buttonVends">Vends tes articles</button>
       </div>
-      <img
-        src="https://lereacteur-vinted.netlify.app/static/media/hero.2c66d85a1335550c4518.jpg"
-        alt=""
-      />
     </>
   );
 };

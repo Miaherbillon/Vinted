@@ -14,17 +14,12 @@ body {
 .router img {
   margin-top: 0;
   display: flex;
-  /* border: solid 2px red; */
+
   width: 100px;
   height: fit-content;
   object-fit: contain;
 }
-/* .router button {
-  border: solid 5px black;
-  height: 30px;
-  justify-content: center;
-  align-items: center;
-} */
+
 .header {
   display: flex;
   /* align-items: center; */
@@ -47,7 +42,8 @@ img {
   margin: 80px auto;
   flex-wrap: wrap;
   display: flex;
-  gap: 20px;
+  /* border: solid rgb(110, 84, 91) 1px; */
+  justify-content: center;
 }
 button {
   background-color: rgb(255, 255, 255);
@@ -57,6 +53,7 @@ button {
   padding: 10px;
   box-sizing: border-box;
   cursor: pointer;
+  margin: 20px;
 }
 
 button img {

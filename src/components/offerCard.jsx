@@ -5,16 +5,34 @@ const OffersCard = ({ offer }) => {
 
   console.log(offer);
   return (
-    <Link to={`/offer/$(offer._id}`}>
+    <Link to={`/offer/${offer._id}`}>
       <div>
-        <button>
+        <article>
           <h2>
-            {offer.owner.account.username} {}
+            <span>{offer.owner.account.username}</span>
+            <span>
+              {owner.account.avatar && (
+                <img src={owner.account.avatar.secure_url} alt="" />
+              )}
+            </span>
           </h2>
-          <h1>{offer.product_name}</h1>
-          <img src={offer.product_image.secure_url} alt="" />
-          <p>{offer.product_price}</p>
-        </button>
+          <div>
+            <img src={offer.product_image.secure_url} alt="" />
+            <p>{offer.product_price}</p>
+            <div>
+              {product_details.map((detail, index) => {
+                console.log(detail);
+                if (detail.MARQUE) {
+                  return <p key={index}>{detail.MARQUE}</p>;
+                } else if (detail.TAILLE) {
+                  return <p key={index}>{detail.TAILLE}</p>;
+                } else {
+                  return null;
+                }
+              })}
+            </div>
+          </div>
+        </article>
       </div>
     </Link>
   );

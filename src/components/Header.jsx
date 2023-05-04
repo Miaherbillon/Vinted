@@ -11,9 +11,15 @@ const Header = () => {
           </Link>
         </div>
         <input type="text" placeholder="Je recherche" />
-        <button>S'inscrire</button>
-        <button>Se connecter</button>
-        <button className="buttonVends">Vends tes articles</button>
+        <Link to="/inscription">
+          <button>S'inscrire</button>
+        </Link>
+        <Link to="/Connexion">
+          <button>Se connecter</button>
+        </Link>
+        <Link to="/Vendre">
+          <button className="buttonVends">Vends tes articles</button>
+        </Link>
       </div>
     </>
   );

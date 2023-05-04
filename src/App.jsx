@@ -4,6 +4,7 @@ import Header from "./components/Header";
 //pages
 import Home from "./pages/Home";
 import Offers from "./pages/Offers";
+import Connexion from "./pages/Connexion";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Offers/:id" element={<Offers />} />
+        <Route path="/connexion" element={<Connexion />} />
       </Routes>
     </Router>
   );

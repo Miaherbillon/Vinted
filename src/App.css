@@ -1,3 +1,7 @@
+a {
+  text-decoration: none;
+}
+
 body {
   padding-top: 50px;
   width: 100vw;
@@ -48,7 +52,7 @@ img {
 article {
   box-shadow: none;
   background-color: rgba(0, 0, 0, 0.06);
-  width: 180px;
+  width: 150px;
   height: 450px;
   padding: 15px 0;
   /* border: 1px solid rgb(49, 175, 188); */
@@ -56,7 +60,7 @@ article {
 
   box-sizing: border-box;
   cursor: pointer;
-  margin: 32px;
+  margin: 15px;
 }
 
 article:hover {

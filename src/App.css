@@ -1,9 +1,10 @@
 body {
   padding-top: 50px;
+  width: 100vw;
 }
 
 .router {
-  width: 1000px;
+  width: 70vw;
   height: 0px;
   margin: 0 auto;
   display: flex;
@@ -35,7 +36,7 @@ img {
 }
 
 .offers {
-  width: 1000px;
+  width: 70vw;
   margin: 80px auto;
   flex-wrap: wrap;
   display: flex;
@@ -44,18 +45,22 @@ img {
 }
 .router button {
   height: fit-content;
-  margin: 15px 0;
+  margin: 29px 0;
 }
 
 button {
   background-color: rgb(255, 255, 255);
   width: 180px;
   height: 400px;
-  border: 1px solid black;
+  border: 1px solid grey;
   padding: 10px;
   box-sizing: border-box;
   cursor: pointer;
-  margin: 20px;
+  margin: 32px;
+}
+
+button:hover {
+  background-color: rgba(49, 174, 188, 0.142);
 }
 
 button img {
@@ -75,7 +80,7 @@ button p {
 button h1 {
   height: 70px;
   text-align: center;
-  color: rgb(18, 153, 135);
+  color: rgb(49, 175, 188);
   font-weight: bolder;
   flex-wrap: wrap;
   font-size: 13px;
@@ -97,6 +102,7 @@ input {
   border: 1px solid gray;
   border-radius: 5px;
   cursor: pointer;
+  color: rgb(49, 175, 188);
 }
 /* button:hover {
   background-color: rebeccapurple;

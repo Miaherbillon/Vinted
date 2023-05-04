@@ -14,7 +14,6 @@ body {
 .router img {
   margin-top: 0;
   display: flex;
-
   width: 100px;
   height: fit-content;
   object-fit: contain;
@@ -22,8 +21,6 @@ body {
 
 .header {
   display: flex;
-  /* align-items: center; */
-  /* justify-content: space-between; */
   margin-bottom: 50px;
   height: 20px;
 }
@@ -45,6 +42,11 @@ img {
   /* border: solid rgb(110, 84, 91) 1px; */
   justify-content: center;
 }
+.router button {
+  height: fit-content;
+  margin: 15px 0;
+}
+
 button {
   background-color: rgb(255, 255, 255);
   width: 180px;
@@ -79,10 +81,23 @@ button h1 {
   font-size: 13px;
 }
 input {
-  width: 200px;
+  margin: 0 50px;
+  width: 100%;
   height: 20px;
   display: flex;
-  margin-top: 0;
+  margin-top: 10px;
   border: 1px solid gray;
   border-radius: 5px;
 }
+
+.router button {
+  margin: 0 20px;
+  height: fit-content;
+  width: 200px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/* .router button:hover {
+  color: red;
+} */

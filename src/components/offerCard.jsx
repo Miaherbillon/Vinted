@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 
 const OffersCard = ({ offer }) => {
+  const { owner, product_image, product_price, product_details } = offer;
+
   console.log(offer);
   return (
-    <>
-      <Link to={`/offer/$(offer._id}`} />
+    <Link to={`/offer/$(offer._id}`}>
       <div>
         <button>
           <h2>
@@ -15,7 +16,7 @@ const OffersCard = ({ offer }) => {
           <p>{offer.product_price}</p>
         </button>
       </div>
-    </>
+    </Link>
   );
 };
 

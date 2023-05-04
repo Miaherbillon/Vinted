@@ -23,6 +23,13 @@ const Offers = () => {
     fetchData();
   }, [id]);
 
-  return isLoading ? <p>Loading ...</p> : <p>coucou</p>;
+  return isLoading ? (
+    <p>Loading ...</p>
+  ) : (
+    <div>
+      <img src={data.product_image.secure_url} alt="" />
+      <p>{data.product_price} €</p>
+    </div>
+  );
 };
 export default Offers;

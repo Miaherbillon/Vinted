@@ -28,9 +28,9 @@ const Connexion = () => {
       <div className="connexionBox">
         <div>
           <form>
-            <label>Votre email : </label>
+            <h1>Se connecter</h1>
             <input type="text" placeholder="Inscrivez votre email ici" />
-            <label>Mot de passe : </label>
+
             <input type="password" placeholder="azerty" />
             <button>Validez</button>
           </form>

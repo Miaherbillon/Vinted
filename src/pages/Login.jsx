@@ -1,39 +1,58 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-const Login = () => {
-  const [data, setData] = useState();
-  const [isLoading, setIsLoading] = useState(true);
+const Login = ({ handleToken }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          "https://lereacteur-vinted-api.herokuapp.com/user/login"
-        );
-        setData(response);
-        setIsLoading(false);
-      } catch (error) {
-        console.log(error);
-      }
-    };
+  const navigate = useNavigate();
 
-    fetchData();
-  }, []);
-  console.log(data);
-  return isLoading ? (
-    <p>Loading ...</p>
-  ) : (
+  return (
     <section className="router">
       <div className="connexionBox">
         <div>
-          <form>
-            <h1>Se connecter</h1>
-            <p>email</p>
-            <input type="text" placeholder="Inscrivez votre email ici" />
-            <p>password</p>
-            <input type="password" placeholder="azerty" />
-            <button>Validez</button>
+          <h1>Se connecter</h1>
+          <form
+            onSubmit={async (event) => {
+              event.preventDefault();
+              try {
+                const response = await axios.post(
+                  "https://lereacteur-vinted-api.herokuapp.com/user/login",
+                  {
+                    email: email,
+                    password: password,
+                  }
+                );
+                if (response.data.token) {
+                  handleToken(response.data.token);
+                  navigate("/");
+                  // console.log(response);
+                }
+                console.log(response.data);
+              } catch (error) {
+                console.log(error);
+              }
+            }}
+          >
+            <p>Mail : </p>
+            <input
+              type="email"
+              placeholder="votre email"
+              onChange={(event) => {
+                setEmail(event.target.value);
+              }}
+              value={email}
+            />
+            <p>Password : </p>
+            <input
+              type="password"
+              placeholder="azerty"
+              onChange={(event) => {
+                setPassword(event.target.value);
+              }}
+            />
+            <input type="submit" />
           </form>
         </div>
       </div>

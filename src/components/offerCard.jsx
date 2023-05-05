@@ -18,7 +18,7 @@ const OffersCard = ({ offer }) => {
           </h2>
           <div>
             <img src={offer.product_image.secure_url} alt="" />
-            <p>{offer.product_price}</p>
+            <p>{offer.product_price} €</p>
             <div>
               {product_details.map((detail, index) => {
                 // console.log(detail);

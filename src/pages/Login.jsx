@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const Connexion = () => {
+const Login = () => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
@@ -11,7 +11,7 @@ const Connexion = () => {
         const response = await axios.get(
           "https://lereacteur-vinted-api.herokuapp.com/user/login"
         );
-        setData(response.data);
+        setData(response);
         setIsLoading(false);
       } catch (error) {
         console.log(error);
@@ -20,7 +20,7 @@ const Connexion = () => {
 
     fetchData();
   }, []);
-
+  console.log(data);
   return isLoading ? (
     <p>Loading ...</p>
   ) : (
@@ -29,8 +29,9 @@ const Connexion = () => {
         <div>
           <form>
             <h1>Se connecter</h1>
+            <p>email</p>
             <input type="text" placeholder="Inscrivez votre email ici" />
-
+            <p>password</p>
             <input type="password" placeholder="azerty" />
             <button>Validez</button>
           </form>
@@ -39,4 +40,4 @@ const Connexion = () => {
     </section>
   );
 };
-export default Connexion;
+export default Login;

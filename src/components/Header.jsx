@@ -10,7 +10,7 @@ const Header = () => {
             <img src={Logo} alt="Logo vinted" />
           </Link>
         </div>
-        <input type="text" placeholder="Je recherche" />
+        <input type="text" placeholder=" 🔎 Je recherche "></input>
         <Link to="/Signup">
           <button>S'inscrire</button>
         </Link>

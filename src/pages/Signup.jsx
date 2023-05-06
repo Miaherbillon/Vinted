@@ -43,7 +43,7 @@ const Signup = ({ handleToken }) => {
           onChange={(event) => {
             setUsername(event.target.value);
           }}
-          value={username} //value sera la valeur de username
+          value={username}
         />
         <input
           type="email"
@@ -71,7 +71,7 @@ const Signup = ({ handleToken }) => {
             checked={newletter} // lier la checkbox
           />
           <label htmlFor="newletter">
-            <p>Abonnement à la newletter</p>{" "}
+            <p>Abonnement à la newletter</p>
           </label>
         </div>
 

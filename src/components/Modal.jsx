@@ -53,7 +53,7 @@ const Modal = ({ setVisible, handleToken }) => {
               onChange={(event) => {
                 setUsername(event.target.value);
               }}
-              value={username} //value sera la valeur de username
+              value={username}
             />
             <input
               type="email"

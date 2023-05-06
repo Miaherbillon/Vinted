@@ -14,6 +14,7 @@ const Signup = ({ handleToken }) => {
     <div>
       <h1>S'inscrire</h1>
       <form
+        className="signup"
         onSubmit={async (event) => {
           event.preventDefault();
           try {
@@ -60,7 +61,7 @@ const Signup = ({ handleToken }) => {
           }}
           value={password}
         />
-        <div>
+        <div className="checkBox">
           <input
             id="newletter"
             type="checkbox"
@@ -69,7 +70,9 @@ const Signup = ({ handleToken }) => {
             }}
             checked={newletter} // lier la checkbox
           />
-          <label htmlFor="newletter">S'inscrire a la newletter</label>
+          <label htmlFor="newletter">
+            <p>Abonnement à la newletter</p>{" "}
+          </label>
         </div>
 
         <input type="submit" value="s'inscrire" />

@@ -2,7 +2,7 @@ import Cookies from "js-cookie";
 import { Link } from "react-router-dom";
 import Logo from "../assets/logo-antiguo.png";
 
-const Header = ({ handleToken, token }) => {
+const Header = ({ handleToken, token, setVisible }) => {
   return (
     <>
       <div className="router">
@@ -22,9 +22,15 @@ const Header = ({ handleToken, token }) => {
           </button>
         ) : (
           <>
-            <Link to="/Signup">
-              <button>S'inscrire</button>
-            </Link>
+            {/* <Link to="/Signup"> */}
+            <button
+              onClick={() => {
+                setVisible(true);
+              }}
+            >
+              S'inscrire
+            </button>
+            {/* </Link> */}
             <Link to="/Login">
               <button>Se connecter</button>
             </Link>

@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Cookies from "js-cookie";
 import { useState } from "react";
+import Modal from "./components/Modal";
 //pages
 import Home from "./pages/Home";
 import Offers from "./pages/Offers";
@@ -12,6 +13,7 @@ import Header from "./components/Header";
 
 function App() {
   const [token, setToken] = useState(Cookies.get("vintedToken") || null);
+  const [visible, setVisible] = useState(false);
 
   const handleToken = (token) => {
     if (token) {
@@ -23,15 +25,26 @@ function App() {
     }
   };
   return (
-    <Router>
-      <Header handleToken={handleToken} token={token} />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Offers/:id" element={<Offers />} />
-        <Route path="/Login" element={<Login handleToken={handleToken} />} />
-        <Route path="/Signup" element={<Signup handleToken={handleToken} />} />
-      </Routes>
-    </Router>
+    <div className="app">
+      <Router>
+        <Header
+          handleToken={handleToken}
+          token={token}
+          visible={visible}
+          setVisible={setVisible}
+        />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Offers/:id" element={<Offers />} />
+          <Route path="/Login" element={<Login handleToken={handleToken} />} />
+          {/* <Route
+            path="/Signup"
+            element={<Signup handleToken={handleToken} />}
+          /> */}
+        </Routes>
+        {visible && <Modal setVisible={setVisible} />}
+      </Router>
+    </div>
   );
 }
 

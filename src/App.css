@@ -12,14 +12,15 @@ body {
 
 .router {
   width: 90vw;
-  /* height: 0px; */
   margin: 0px auto;
   display: flex;
   justify-content: space-between;
 }
 
 /*-----------------------*/
-/*----Logo ---*/
+/*----Logo --------------*/
+/*-----------------------*/
+
 .router img {
   margin-top: 0;
   display: flex;
@@ -146,7 +147,7 @@ input {
   width: 150px;
 }
 /*-----------------------*/
-/*--------OFFERS---------------*/
+/*--------OFFERS---------*/
 /*-----------------------*/
 .Offers {
   width: 60vw;
@@ -174,7 +175,7 @@ input {
   color: rgb(49, 175, 188);
 }
 /*-----------------------*/
-/*------CONNEXION-----------------*/
+/*------CONNEXION--------*/
 /*-----------------------*/
 
 .connexionBox {
@@ -223,8 +224,10 @@ form button {
 form p {
   margin-bottom: 5px;
 }
-
+/*---------------------------*/
 /*-----------Modal------------*/
+/*---------------------------*/
+
 .modal-root {
   color: gray;
   position: absolute;
@@ -271,9 +274,15 @@ form p {
 }
 
 /*---------------------------*/
+/*---------------------------*/
+/*---------------------------*/
 
-@media (max-width=1000px) {
-  header {
-    color: blue;
+@media (max-width: 1000px) {
+  .router button {
+    width: 80px;
+    margin: 5px;
+  }
+  .router button.buttonVends {
+    width: 80px;
   }
 }

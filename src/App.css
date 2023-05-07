@@ -228,21 +228,20 @@ form p {
 .modal-root {
   color: gray;
   position: absolute;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   top: 0;
   left: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
-  background-color: rgba(49, 174, 188, 0.234);
+  background-color: rgba(255, 255, 255, 0.664);
 }
 .modal {
   background-color: white;
+  border: solid grey 2px;
   width: fit-content;
   height: fit-content;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 50px;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -262,6 +261,7 @@ form p {
 
 .signup input {
   width: 20vw;
+  height: 30px;
   justify-content: center;
 }
 

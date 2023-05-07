@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
 
 const OffersCard = ({ offer }) => {
-  const { owner, product_image, product_price, product_details } = offer;
-
-  // console.log(offer);
+  const { owner, product_details } = offer;
+  console.log(offer);
   return (
     <Link to={`/offers/${offer._id}`}>
       <div>

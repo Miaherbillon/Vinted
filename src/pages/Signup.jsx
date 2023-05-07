@@ -39,7 +39,7 @@ const Signup = ({ handleToken }) => {
       >
         <input
           type="text"
-          placeholder="nom utilisateur"
+          placeholder="Nom"
           onChange={(event) => {
             setUsername(event.target.value);
           }}

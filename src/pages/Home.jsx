@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Header from "../components/Header";
 
 import OffersCard from "../components/offerCard";
 
@@ -34,7 +33,8 @@ const Home = () => {
       />
       <div className="offers">
         {data.offers.map((elem) => {
-          // console.log(elem.product_details);
+          console.log(elem);
+
           return <OffersCard key={elem._id} offer={elem} />;
         })}
       </div>

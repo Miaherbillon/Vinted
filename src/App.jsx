@@ -7,7 +7,7 @@ import Modal from "./components/Modal";
 import Home from "./pages/Home";
 import Offers from "./pages/Offers";
 import Login from "./pages/Login";
-import Signup from "./pages/Signup";
+// import Signup from "./pages/Signup";
 //components
 import Header from "./components/Header";
 
@@ -24,6 +24,7 @@ function App() {
       Cookies.remove("vintedToken");
     }
   };
+
   return (
     <div className="app">
       <Router>
@@ -33,6 +34,7 @@ function App() {
           visible={visible}
           setVisible={setVisible}
         />
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Offers/:id" element={<Offers />} />

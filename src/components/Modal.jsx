@@ -49,7 +49,7 @@ const Modal = ({ setVisible, handleToken }) => {
           >
             <input
               type="text"
-              placeholder="nom utilisateur"
+              placeholder="Nom"
               onChange={(event) => {
                 setUsername(event.target.value);
               }}
@@ -57,7 +57,7 @@ const Modal = ({ setVisible, handleToken }) => {
             />
             <input
               type="email"
-              placeholder="email"
+              placeholder="Email"
               onChange={(event) => {
                 setEmail(event.target.value);
               }}
@@ -65,7 +65,7 @@ const Modal = ({ setVisible, handleToken }) => {
             />
             <input
               type="password"
-              placeholder="azerty"
+              placeholder="Mot de passe"
               onChange={(event) => {
                 setPassword(event.target.value);
               }}
@@ -85,7 +85,7 @@ const Modal = ({ setVisible, handleToken }) => {
               </label>
             </div>
 
-            <input type="submit" value="s'inscrire" />
+            <input type="submit" value="S'inscrire" />
           </form>
           <Link to="/Login"> Tu as déja un compte ? connecte-toi</Link>
         </div>

@@ -262,6 +262,29 @@ form p {
   text-align: center;
   margin-bottom: 20px;
 }
+/*---------------------------*/
+/*---------Pubish-------*/
+/*---------------------------*/
+
+.publish {
+  border: solid rgba(128, 128, 128, 0.401) 1px;
+  border-radius: 10px;
+  width: 50vw;
+  margin: 50px auto;
+}
+.publish input {
+  margin-top: 5px;
+  width: 25vw;
+  justify-content: center;
+}
+
+.publish h1 {
+  font-size: 30px;
+  margin-bottom: 50px;
+}
+.publish h2 {
+  font-size: 20px;
+}
 
 /*---------------------------*/
 /*---------Respoonsive-------*/

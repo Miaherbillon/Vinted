@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/logo-antiguo.png";
-// import OffersCard from "./offerCard";
 import axios from "axios";
 
 const Header = ({ handleToken, token, setVisible, search, setSearch }) => {
@@ -31,7 +30,6 @@ const Header = ({ handleToken, token, setVisible, search, setSearch }) => {
       <Link to="/">
         <img src={Logo} alt="Logo vinted" />
       </Link>
-
       <input
         type="text"
         placeholder=" 🔎 Je recherche "
@@ -40,7 +38,6 @@ const Header = ({ handleToken, token, setVisible, search, setSearch }) => {
           setSearch(event.target.value);
         }}
       />
-
       {token ? (
         <button
           onClick={() => {
@@ -59,16 +56,20 @@ const Header = ({ handleToken, token, setVisible, search, setSearch }) => {
           >
             Signup
           </button>
-          {/* </Link> */}
           <Link to="/Login">
             <button>Login</button>
           </Link>
         </>
       )}
-
-      <Link to="/Vendre">
-        <button className="buttonVends">Vendre</button>
-      </Link>
+      {token ? (
+        <Link to="/Publish">
+          <button className="buttonVends">Vendre</button>
+        </Link>
+      ) : (
+        <Link to="/Login">
+          <button className="buttonVends">Vendre</button>
+        </Link>
+      )}
     </div>
   );
 };

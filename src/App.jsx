@@ -7,6 +7,7 @@ import Modal from "./components/Modal";
 import Home from "./pages/Home";
 import Offers from "./pages/Offers";
 import Login from "./pages/Login";
+import Publish from "./pages/Publish";
 // import Signup from "./pages/Signup";
 //components
 import Header from "./components/Header";
@@ -42,6 +43,7 @@ function App() {
           <Route path="/" element={<Home search={search} />} />
           <Route path="/Offers/:id" element={<Offers />} />
           <Route path="/Login" element={<Login handleToken={handleToken} />} />
+          <Route path="Publish" element={<Publish />} />
           {/* <Route
             path="/Signup"
             element={<Signup handleToken={handleToken} />}

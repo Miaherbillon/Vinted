@@ -40,6 +40,7 @@ const Modal = ({ setVisible, handleToken }) => {
                 if (response.data.token) {
                   handleToken(response.data.token);
                   navigate("/");
+                  setVisible(false);
                 }
                 console.log(response.data.token);
               } catch (error) {
@@ -81,7 +82,7 @@ const Modal = ({ setVisible, handleToken }) => {
                 checked={newletter} // lier la checkbox
               />
               <label htmlFor="newletter">
-                <p>Abonnement à la newletter</p>{" "}
+                <p>Abonnement à la newletter</p>
               </label>
             </div>
 

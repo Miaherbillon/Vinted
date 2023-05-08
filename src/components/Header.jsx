@@ -4,11 +4,9 @@ import Logo from "../assets/logo-antiguo.png";
 // import OffersCard from "./offerCard";
 import axios from "axios";
 
-const Header = ({ handleToken, token, setVisible }) => {
+const Header = ({ handleToken, token, setVisible, search, setSearch }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
-  // const [search, setSearch] = useState("");
-  // const tab = [];
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,20 +24,6 @@ const Header = ({ handleToken, token, setVisible }) => {
     fetchData();
   }, []);
 
-  // console.log(data.offers);
-
-  // for (let i = 0; i < data.offers.length; i++) {
-  //   // console.log(data.offers(i));
-  //   const wordSearch = search[i];
-  //   if (tab.length < 20) {
-  //     // if (wordSearch.keywords.includes(search)) {
-  //     tab.push(<OffersCard wordSearch={wordSearch} key={wordSearch} />);
-  //   } else {
-  //     break;
-  //   }
-  //   console.log(tab);
-  // }
-
   return isLoading ? (
     <p>Loading ... </p>
   ) : (
@@ -50,10 +34,11 @@ const Header = ({ handleToken, token, setVisible }) => {
 
       <input
         type="text"
-        // placeholder=" 🔎 Je recherche "
-        // onChange={(event) => {
-        //   setSearch(event.target.value);
-        // }}
+        placeholder=" 🔎 Je recherche "
+        value={search}
+        onChange={(event) => {
+          setSearch(event.target.value);
+        }}
       />
 
       {token ? (

@@ -14,6 +14,7 @@ import Header from "./components/Header";
 function App() {
   const [token, setToken] = useState(Cookies.get("vintedToken") || null);
   const [visible, setVisible] = useState(false);
+  const [search, setSearch] = useState("");
 
   const handleToken = (token) => {
     if (token) {
@@ -33,10 +34,12 @@ function App() {
           token={token}
           visible={visible}
           setVisible={setVisible}
+          search={search}
+          setSearch={setSearch}
         />
 
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home search={search} />} />
           <Route path="/Offers/:id" element={<Offers />} />
           <Route path="/Login" element={<Login handleToken={handleToken} />} />
           {/* <Route

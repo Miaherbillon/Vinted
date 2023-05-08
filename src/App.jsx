@@ -16,6 +16,8 @@ function App() {
   const [token, setToken] = useState(Cookies.get("vintedToken") || null);
   const [visible, setVisible] = useState(false);
   const [search, setSearch] = useState("");
+  const [maxPrice, setMaxPrice] = useState(0);
+  const [minPrice, setMinPrice] = useState(0);
 
   const handleToken = (token) => {
     if (token) {
@@ -37,10 +39,19 @@ function App() {
           setVisible={setVisible}
           search={search}
           setSearch={setSearch}
+          maxPrice={maxPrice}
+          setMaxPrice={setMaxPrice}
+          minPrice={minPrice}
+          setMinPrice={setMinPrice}
         />
 
         <Routes>
-          <Route path="/" element={<Home search={search} />} />
+          <Route
+            path="/"
+            element={
+              <Home search={search} maxPrice={maxPrice} minPrice={minPrice} />
+            }
+          />
           <Route path="/Offers/:id" element={<Offers />} />
           <Route path="/Login" element={<Login handleToken={handleToken} />} />
           <Route path="Publish" element={<Publish token={token} />} />

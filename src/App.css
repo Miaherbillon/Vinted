@@ -286,6 +286,21 @@ form p {
   font-size: 20px;
 }
 
+/*--------------------*/
+/*-------Filter-------*/
+/*--------------------*/
+
+.filter input {
+  width: 40px;
+  margin-left: 10px;
+  height: 15px;
+}
+.filter div {
+  margin-top: 30px;
+  display: flex;
+  margin-left: 60px;
+}
+
 /*---------------------------*/
 /*---------Respoonsive-------*/
 /*---------------------------*/
@@ -298,7 +313,7 @@ form p {
     margin-top: 0px;
   }
 
-  input {
+  .router input {
     width: 40vw;
     height: 30px;
   }

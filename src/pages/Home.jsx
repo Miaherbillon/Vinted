@@ -3,7 +3,7 @@ import axios from "axios";
 
 import OffersCard from "../components/offerCard";
 
-const Home = ({ search }) => {
+const Home = ({ search, maxPrice, minPrice }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
@@ -11,7 +11,7 @@ const Home = ({ search }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://lereacteur-vinted-api.herokuapp.com/offers?title=${search}`
+          `https://lereacteur-vinted-api.herokuapp.com/offers?title=${search}&priceMin=${minPrice}&priceMax=${maxPrice}`
         );
         setData(response.data);
         setIsLoading(false);
@@ -21,7 +21,7 @@ const Home = ({ search }) => {
     };
 
     fetchData();
-  }, [search]);
+  }, [search, maxPrice, minPrice]);
 
   return isLoading ? (
     <p>Loading ... </p>
@@ -33,7 +33,7 @@ const Home = ({ search }) => {
       />
       <div className="offers">
         {data.offers.map((elem) => {
-          console.log(elem);
+          // console.log(elem);
 
           return <OffersCard key={elem._id} offer={elem} />;
         })}

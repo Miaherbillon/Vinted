@@ -2,9 +2,18 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/logo-antiguo.png";
 import axios from "axios";
-import { Range } from "react-range";
 
-const Header = ({ handleToken, token, setVisible, search, setSearch }) => {
+const Header = ({
+  handleToken,
+  token,
+  setVisible,
+  search,
+  setSearch,
+  maxPrice,
+  setMaxPrice,
+  minPrice,
+  setMinPrice,
+}) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
@@ -20,7 +29,7 @@ const Header = ({ handleToken, token, setVisible, search, setSearch }) => {
         console.log(error);
       }
     };
-
+    // console.log(data.product_name);
     fetchData();
   }, []);
 
@@ -31,14 +40,39 @@ const Header = ({ handleToken, token, setVisible, search, setSearch }) => {
       <Link to="/">
         <img src={Logo} alt="Logo vinted" />
       </Link>
-      <input
-        type="text"
-        placeholder=" 🔎 Je recherche "
-        value={search}
-        onChange={(event) => {
-          setSearch(event.target.value);
-        }}
-      />
+      <div>
+        <input
+          type="text"
+          placeholder=" 🔎 Je recherche "
+          value={search}
+          onChange={(event) => {
+            setSearch(event.target.value);
+          }}
+        />
+
+        <div className="filter">
+          <div>
+            <p>Prix Min : € </p>
+            <input
+              type="number"
+              value={minPrice}
+              onChange={(event) => {
+                setMinPrice(event.target.value);
+              }}
+            />
+          </div>
+          <div>
+            <p>Prix Max : € </p>
+            <input
+              type="number"
+              value={maxPrice}
+              onChange={(event) => {
+                setMaxPrice(event.target.value);
+              }}
+            />
+          </div>
+        </div>
+      </div>
 
       {token ? (
         <button

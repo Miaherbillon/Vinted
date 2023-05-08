@@ -49,20 +49,20 @@ const Modal = ({ setVisible, handleToken }) => {
             }}
           >
             <input
-              type="text"
-              placeholder="Nom"
-              onChange={(event) => {
-                setUsername(event.target.value);
-              }}
-              value={username}
-            />
-            <input
               type="email"
               placeholder="Email"
               onChange={(event) => {
                 setEmail(event.target.value);
               }}
               value={email}
+            />
+            <input
+              type="text"
+              placeholder="Nom"
+              onChange={(event) => {
+                setUsername(event.target.value);
+              }}
+              value={username}
             />
             <input
               type="password"

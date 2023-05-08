@@ -23,7 +23,7 @@ const Offers = () => {
 
     fetchData();
   }, [id]);
-  console.log(data);
+  // console.log(data);
   return isLoading ? (
     <p>Loading ...</p>
   ) : (
@@ -31,7 +31,6 @@ const Offers = () => {
       <img src={data.product_image.secure_url} alt="" />
       <div className="OfferDescription">
         {data.product_details.map((details, index) => {
-          console.log(details);
           const keyName = Object.keys(details)[0];
           return (
             <div className="OfferInfoDesc" key={index}>

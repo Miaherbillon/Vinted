@@ -13,7 +13,6 @@ body {
 
 .router {
   width: 90vw;
-  /* padding: 40px; */
   margin: 0px auto;
   display: flex;
   justify-content: space-between;
@@ -31,10 +30,8 @@ body {
   object-fit: contain;
 }
 /*-----------------------*/
-/* .header {
-  display: flex;
-  margin-bottom: 20px;
-} */
+/*---------Header--------*/
+/*-----------------------*/
 
 img {
   margin-top: 50px;
@@ -42,34 +39,27 @@ img {
   height: 350px;
   object-fit: cover;
   object-position: 50% 50%;
-  /* border: 1px rgb(237, 5, 5) solid; */
 }
 
 .offers {
   width: auto;
-  margin: 30px auto;
+  margin: 30px 5vw;
   flex-wrap: wrap;
   display: flex;
-  /* border: solid rgb(110, 84, 91) 1px; */
   justify-content: center;
 }
 
 article {
   box-shadow: none;
-  width: 300px;
+  width: 200px;
   height: 450px;
   padding: 5px 0;
-  /* border: 1px solid rgb(49, 175, 188); */
   border-radius: 5px;
 
   box-sizing: border-box;
   cursor: pointer;
   margin: 5px;
 }
-
-/* article:hover {
-  background-color: rgba(49, 174, 188, 0.142);
-} */
 
 article :last-child img {
   margin-top: 10px;
@@ -123,9 +113,9 @@ article span {
   color: gray;
 }
 input {
-  margin: 0 60px;
+  margin: 0px 60px;
   width: 40vw;
-  height: 40px;
+  height: 30px;
   display: flex;
   margin-top: 0px;
   border: none;
@@ -135,7 +125,7 @@ input {
 
 .router button {
   margin: 0 10px;
-  height: 40px;
+  height: 30px;
   width: 10vw;
   border: 1px solid gray;
   border-radius: 5px;
@@ -166,7 +156,6 @@ input {
 .OfferDescription {
   margin-top: 100px;
   text-align: center;
-  /* border: 1px solid red; */
 }
 .OfferInfoDesc {
   margin: 40px;
@@ -181,7 +170,6 @@ input {
 /*-----------------------*/
 
 .connexionBox {
-  /* border: solid 1px gray; */
   border-radius: 10px;
   margin: 0px auto;
   height: 30vw;
@@ -276,8 +264,9 @@ form p {
 }
 
 /*---------------------------*/
+/*---------Respoonsive-------*/
 /*---------------------------*/
-/*---------------------------*/
+
 @media (max-width: 1000px) {
   .router button {
     /* width: 10vw; */
@@ -330,6 +319,10 @@ form p {
     height: fit-content;
     object-fit: contain;
   }
+  .offers {
+    width: auto;
+    margin: 30px 2vw;
+  }
 }
 
 @media (max-width: 750px) {
@@ -347,5 +340,14 @@ form p {
     width: 60px;
     height: fit-content;
     object-fit: contain;
+  }
+  .offers {
+    width: auto;
+    margin: 30px 0vw;
+  }
+}
+@media (max-width: 750px) {
+  article :first-child img {
+    display: none;
   }
 }

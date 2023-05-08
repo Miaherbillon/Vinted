@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Publish = ({ token }) => {
   const [title, setTitle] = useState("");
@@ -12,6 +13,8 @@ const Publish = ({ token }) => {
   const [color, setColor] = useState("");
   const [picture, setPicture] = useState("");
   const [imgFromCloudinary, setImgFromCloudinary] = useState();
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -135,7 +138,16 @@ const Publish = ({ token }) => {
           }}
         />
 
-        <input className="submit" type="submit" value={"Poster une offer"} />
+        <input
+          className="submit"
+          type="submit"
+          value={"Poster une offre"}
+          onSubmit={() => {
+            if (Publish) {
+              navigate("/");
+            }
+          }}
+        />
 
         {imgFromCloudinary && <img src={imgFromCloudinary} alt="" />}
       </form>

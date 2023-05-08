@@ -36,13 +36,14 @@ const Publish = ({ token }) => {
         formData,
         {
           headers: {
-            Authorization: `bearer${token}`,
+            Authorization: `Bearer ${token}`,
             "Content-Type": "multipart/form-data",
           },
         }
       );
       console.log(response.data);
       setImgFromCloudinary(response.data.secure_url);
+      navigate("/");
     } catch (error) {
       console.log(error.message);
     }
@@ -138,16 +139,7 @@ const Publish = ({ token }) => {
           }}
         />
 
-        <input
-          className="submit"
-          type="submit"
-          value={"Poster une offre"}
-          onSubmit={() => {
-            if (Publish) {
-              navigate("/");
-            }
-          }}
-        />
+        <input className="submit" type="submit" value={"Poster une offre"} />
 
         {imgFromCloudinary && <img src={imgFromCloudinary} alt="" />}
       </form>

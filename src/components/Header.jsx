@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/logo-antiguo.png";
 import axios from "axios";
+import { Range } from "react-range";
 
 const Header = ({ handleToken, token, setVisible, search, setSearch }) => {
   const [data, setData] = useState();
@@ -38,6 +39,7 @@ const Header = ({ handleToken, token, setVisible, search, setSearch }) => {
           setSearch(event.target.value);
         }}
       />
+
       {token ? (
         <button
           onClick={() => {

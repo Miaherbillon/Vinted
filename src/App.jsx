@@ -43,7 +43,7 @@ function App() {
           <Route path="/" element={<Home search={search} />} />
           <Route path="/Offers/:id" element={<Offers />} />
           <Route path="/Login" element={<Login handleToken={handleToken} />} />
-          <Route path="Publish" element={<Publish />} />
+          <Route path="Publish" element={<Publish token={token} />} />
           {/* <Route
             path="/Signup"
             element={<Signup handleToken={handleToken} />}

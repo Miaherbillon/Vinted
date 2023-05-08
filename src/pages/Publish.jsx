@@ -49,101 +49,103 @@ const Publish = ({ token }) => {
     }
   };
   return (
-    <div className="publish">
-      <form onSubmit={handleSubmit}>
-        <h1>Vends ton article</h1>
-        <h2>Title</h2>
-        <input
-          type="text"
-          placeholder="Title"
-          value={title}
-          onChange={(event) => {
-            setTitle(event.target.value);
-          }}
-        />
-        <h2>Description</h2>
-        <input
-          type="text"
-          placeholder="description"
-          value={description}
-          onChange={(event) => {
-            console.log(event.target.value);
-            setDescription(event.target.value);
-          }}
-        />
-        <h2>Price</h2>
-        <input
-          type="text"
-          placeholder="price"
-          value={price}
-          onChange={(event) => {
-            console.log(event.target.value);
-            setPrice(event.target.value);
-          }}
-        />
-        <h2>Condition</h2>
-        <input
-          type="text"
-          placeholder="condition"
-          value={condition}
-          onChange={(event) => {
-            console.log(event.target.value);
-            setCondition(event.target.value);
-          }}
-        />
-        <h2>City</h2>
-        <input
-          type="text"
-          placeholder="city"
-          value={city}
-          onChange={(event) => {
-            console.log(event.target.value);
-            setCity(event.target.value);
-          }}
-        />
-        <h2>Brand</h2>
-        <input
-          type="text"
-          placeholder="brand"
-          value={brand}
-          onChange={(event) => {
-            console.log(event.target.value);
-            setBrand(event.target.value);
-          }}
-        />
-        <h2>Size</h2>
-        <input
-          type="text"
-          placeholder="size"
-          value={size}
-          onChange={(event) => {
-            console.log(event.target.value);
-            setSize(event.target.value);
-          }}
-        />
-        <h2>Color</h2>
-        <input
-          type="text"
-          placeholder="color"
-          value={color}
-          onChange={(event) => {
-            console.log(event.target.value);
-            setColor(event.target.value);
-          }}
-        />
-        <h2>Picture</h2>
-        <input
-          type="file"
-          onChange={(event) => {
-            setPicture(event.target.files[0]);
-          }}
-        />
+    token && (
+      <div className="publish">
+        <form onSubmit={handleSubmit}>
+          <h1>Vends ton article</h1>
+          <h2>Title</h2>
+          <input
+            type="text"
+            placeholder="Title"
+            value={title}
+            onChange={(event) => {
+              setTitle(event.target.value);
+            }}
+          />
+          <h2>Description</h2>
+          <input
+            type="text"
+            placeholder="description"
+            value={description}
+            onChange={(event) => {
+              console.log(event.target.value);
+              setDescription(event.target.value);
+            }}
+          />
+          <h2>Price</h2>
+          <input
+            type="text"
+            placeholder="price"
+            value={price}
+            onChange={(event) => {
+              console.log(event.target.value);
+              setPrice(event.target.value);
+            }}
+          />
+          <h2>Condition</h2>
+          <input
+            type="text"
+            placeholder="condition"
+            value={condition}
+            onChange={(event) => {
+              console.log(event.target.value);
+              setCondition(event.target.value);
+            }}
+          />
+          <h2>City</h2>
+          <input
+            type="text"
+            placeholder="city"
+            value={city}
+            onChange={(event) => {
+              console.log(event.target.value);
+              setCity(event.target.value);
+            }}
+          />
+          <h2>Brand</h2>
+          <input
+            type="text"
+            placeholder="brand"
+            value={brand}
+            onChange={(event) => {
+              console.log(event.target.value);
+              setBrand(event.target.value);
+            }}
+          />
+          <h2>Size</h2>
+          <input
+            type="text"
+            placeholder="size"
+            value={size}
+            onChange={(event) => {
+              console.log(event.target.value);
+              setSize(event.target.value);
+            }}
+          />
+          <h2>Color</h2>
+          <input
+            type="text"
+            placeholder="color"
+            value={color}
+            onChange={(event) => {
+              console.log(event.target.value);
+              setColor(event.target.value);
+            }}
+          />
+          <h2>Picture</h2>
+          <input
+            type="file"
+            onChange={(event) => {
+              setPicture(event.target.files[0]);
+            }}
+          />
 
-        <input className="submit" type="submit" value={"Poster une offre"} />
+          <input className="submit" type="submit" value={"Poster une offre"} />
 
-        {imgFromCloudinary && <img src={imgFromCloudinary} alt="" />}
-      </form>
-    </div>
+          {imgFromCloudinary && <img src={imgFromCloudinary} alt="" />}
+        </form>
+      </div>
+    )
   );
 };
 export default Publish;

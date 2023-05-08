@@ -29,8 +29,9 @@ const Signup = ({ handleToken }) => {
             );
             if (response.data.token) {
               handleToken(response.data.token);
-              navigate("/");
+              navigate("/Publish");
             }
+
             console.log(response.data.token);
           } catch (error) {
             console.log(error.response);

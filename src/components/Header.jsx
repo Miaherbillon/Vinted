@@ -72,17 +72,17 @@ const Header = ({ handleToken, token, setVisible }) => {
               setVisible(true);
             }}
           >
-            S'inscrire
+            Signup
           </button>
           {/* </Link> */}
           <Link to="/Login">
-            <button>Se connecter</button>
+            <button>Login</button>
           </Link>
         </>
       )}
 
       <Link to="/Vendre">
-        <button className="buttonVends">Vends tes articles</button>
+        <button className="buttonVends">Vendre</button>
       </Link>
     </div>
   );

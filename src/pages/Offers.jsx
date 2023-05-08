@@ -40,7 +40,7 @@ const Offers = () => {
             </div>
           );
         })}
-        <div className="OfferPrince">{data.product_price} €</div>
+        <div className="OfferPrice">{data.product_price} €</div>
       </div>
     </section>
   );

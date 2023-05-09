@@ -305,7 +305,7 @@ form p {
 .filter div {
   margin-top: 30px;
   display: flex;
-  margin-left: 60px;
+  margin-left: 30px;
 }
 
 /*---------------------------*/
@@ -378,6 +378,9 @@ form p {
   .offer {
     width: auto;
     margin: 30px 2vw;
+  }
+  .filter {
+    display: none;
   }
 }
 

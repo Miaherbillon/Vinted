@@ -42,7 +42,7 @@ const CheckoutForm = ({ price, title }) => {
   return (
     <div className="pay">
       <p>{title}</p>
-      <p>{price}</p>
+      <p>{price} €</p>
       <form onSubmit={handleSubmit}>
         <h1>Formulaire de paiement</h1>
         <CardElement />

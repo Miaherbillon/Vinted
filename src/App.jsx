@@ -9,7 +9,7 @@ import Home from "./pages/Home";
 import Offers from "./pages/Offers";
 import Login from "./pages/Login";
 import Publish from "./pages/Publish";
-// import Payment from "./pages/Payment";
+import Payment from "./pages/Payment";
 //components
 import Header from "./components/Header";
 
@@ -56,7 +56,7 @@ function App() {
           <Route path="/Offers/:id" element={<Offers />} />
           <Route path="/Login" element={<Login handleToken={handleToken} />} />
           <Route path="/Publish" element={<Publish token={token} />} />
-          {/* <Route path="/Payment" element={<Payment />} /> */}
+          <Route path="/Payment" element={<Payment />} />
         </Routes>
 
         {visible && <Modal setVisible={setVisible} handleToken={handleToken} />}

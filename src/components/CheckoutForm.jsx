@@ -6,8 +6,8 @@ const CheckoutForm = ({ price, title }) => {
   const [isLoading, setLoading] = useState(false);
   const [completed, setCompleted] = useState(false);
   //
-  const stripe = useStripe();
-  const elements = useElements();
+  let stripe = useStripe();
+  let elements = useElements();
   //
   const handleSubmit = async (event) => {
     event.preventDefault();

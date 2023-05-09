@@ -31,7 +31,7 @@ const Home = ({ search, maxPrice, minPrice }) => {
         src="https://lereacteur-vinted.netlify.app/static/media/hero.2c66d85a1335550c4518.jpg"
         alt=""
       />
-      <div className="offers">
+      <div className="offer">
         {data.offers.map((elem) => {
           return <OffersCard key={elem._id} offer={elem} />;
         })}

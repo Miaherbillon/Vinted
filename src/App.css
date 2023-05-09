@@ -40,7 +40,7 @@ img {
   object-position: 50% 50%;
 }
 
-.offers {
+.offer {
   width: 80vw;
   margin: 30px 10vw;
   flex-wrap: wrap;
@@ -315,6 +315,10 @@ form p {
 }
 
 /*---------------------------*/
+/*---------Paiement----------*/
+/*---------------------------*/
+
+/*---------------------------*/
 /*---------Respoonsive-------*/
 /*---------------------------*/
 
@@ -370,7 +374,7 @@ form p {
     height: fit-content;
     object-fit: contain;
   }
-  .offers {
+  .offer {
     width: auto;
     margin: 30px 2vw;
   }
@@ -392,7 +396,7 @@ form p {
     height: fit-content;
     object-fit: contain;
   }
-  .offers {
+  .offer {
     width: auto;
     margin: 30px 0vw;
   }

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+//components
 import OffersCard from "../components/offerCard";
 
 const Home = ({ search, maxPrice, minPrice }) => {
@@ -33,8 +33,6 @@ const Home = ({ search, maxPrice, minPrice }) => {
       />
       <div className="offers">
         {data.offers.map((elem) => {
-          // console.log(elem);
-
           return <OffersCard key={elem._id} offer={elem} />;
         })}
       </div>

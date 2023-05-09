@@ -29,7 +29,6 @@ const Header = ({
         console.log(error);
       }
     };
-    // console.log(data.product_name);
     fetchData();
   }, []);
 
@@ -84,7 +83,6 @@ const Header = ({
         </button>
       ) : (
         <>
-          {/* <Link to="/Signup"> */}
           <button
             onClick={() => {
               setVisible(true);
@@ -99,11 +97,11 @@ const Header = ({
       )}
       {token ? (
         <Link to="/Publish">
-          <button className="buttonVends">Vendre</button>
+          <button className="buttonVends">Vends tes articles</button>
         </Link>
       ) : (
         <Link to="/Login">
-          <button className="buttonVends">Vendre</button>
+          <button className="buttonVends">Vends tes articles</button>
         </Link>
       )}
     </div>

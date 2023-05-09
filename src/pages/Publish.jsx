@@ -53,28 +53,33 @@ const Publish = ({ token }) => {
       <div className="publish">
         <form onSubmit={handleSubmit}>
           <h1>Vends ton article</h1>
-          <h2>Title</h2>
+
+          <label htmlFor="title">Title</label>
           <input
             type="text"
+            is="title"
             placeholder="Title"
             value={title}
             onChange={(event) => {
               setTitle(event.target.value);
             }}
           />
-          <h2>Description</h2>
-          <input
-            type="text"
-            placeholder="description"
+          <label htmlFor="message">Description</label>
+          <textarea
+            name="dexription"
+            id="message"
+            placeholder="Description de l'article"
             value={description}
             onChange={(event) => {
               console.log(event.target.value);
               setDescription(event.target.value);
             }}
           />
-          <h2>Price</h2>
+
+          <label htmlFor="price">Price</label>
           <input
-            type="text"
+            type="number"
+            id="price"
             placeholder="price"
             value={price}
             onChange={(event) => {
@@ -82,9 +87,11 @@ const Publish = ({ token }) => {
               setPrice(event.target.value);
             }}
           />
-          <h2>Condition</h2>
+
+          <label htmlFor="condition">Condition</label>
           <input
             type="text"
+            id="condition"
             placeholder="condition"
             value={condition}
             onChange={(event) => {
@@ -92,9 +99,11 @@ const Publish = ({ token }) => {
               setCondition(event.target.value);
             }}
           />
-          <h2>City</h2>
+
+          <label htmlFor="City">City</label>
           <input
             type="text"
+            id="City"
             placeholder="city"
             value={city}
             onChange={(event) => {
@@ -102,9 +111,11 @@ const Publish = ({ token }) => {
               setCity(event.target.value);
             }}
           />
-          <h2>Brand</h2>
+
+          <label htmlFor="brand">Brand</label>
           <input
             type="text"
+            id="brand"
             placeholder="brand"
             value={brand}
             onChange={(event) => {
@@ -112,9 +123,11 @@ const Publish = ({ token }) => {
               setBrand(event.target.value);
             }}
           />
-          <h2>Size</h2>
+
+          <label htmlFor="size">Size</label>
           <input
             type="text"
+            id="size"
             placeholder="size"
             value={size}
             onChange={(event) => {
@@ -122,9 +135,11 @@ const Publish = ({ token }) => {
               setSize(event.target.value);
             }}
           />
-          <h2>Color</h2>
+
+          <label htmlFor="color">Color</label>
           <input
             type="text"
+            id="color"
             placeholder="color"
             value={color}
             onChange={(event) => {
@@ -132,13 +147,16 @@ const Publish = ({ token }) => {
               setColor(event.target.value);
             }}
           />
-          <h2>Picture</h2>
+          <label htmlFor="picture">Choisis une image</label>
           <input
+            style={{ display: "none" }}
             type="file"
+            id="picture"
             onChange={(event) => {
               setPicture(event.target.files[0]);
             }}
           />
+          {picture && <img src={URL.createObjectURL(picture)} />}
 
           <input className="submit" type="submit" value={"Poster une offre"} />
 

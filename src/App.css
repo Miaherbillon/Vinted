@@ -1,6 +1,5 @@
 a {
   text-decoration: none;
-  box-sizing: border-box;
 }
 .app {
   position: relative;
@@ -12,8 +11,8 @@ body {
 }
 
 .router {
-  width: 70vw;
-  margin: 0px auto;
+  width: 80vw;
+  margin: auto;
   display: flex;
   justify-content: space-between;
 }
@@ -126,7 +125,7 @@ input {
 .router button {
   margin: 0 10px;
   height: 30px;
-  width: 10vw;
+  width: 5vw;
   border: 1px solid gray;
   border-radius: 5px;
   cursor: pointer;
@@ -136,7 +135,7 @@ input {
 .router button.buttonVends {
   background-color: rgb(49, 175, 188);
   color: white;
-  width: 15vwpx;
+  width: 10vw;
 }
 /*-----------------------*/
 /*--------OFFERS---------*/
@@ -165,6 +164,7 @@ input {
   font-size: 40px;
   color: rgb(49, 175, 188);
 }
+
 /*-----------------------*/
 /*------CONNEXION--------*/
 /*-----------------------*/
@@ -181,6 +181,12 @@ input {
   height: fit-content;
   border: none;
   border-bottom: solid 1px grey;
+}
+
+textarea {
+  width: 25vw;
+  height: 50px;
+  margin: 20px 0px;
 }
 
 form {
@@ -282,7 +288,9 @@ form p {
   font-size: 30px;
   margin-bottom: 50px;
 }
-.publish h2 {
+
+.publish label {
+  margin: 10px 0;
   font-size: 20px;
 }
 
@@ -290,8 +298,13 @@ form p {
 /*-------Filter-------*/
 /*--------------------*/
 
+.filter {
+  display: flex;
+  justify-content: center;
+}
+
 .filter input {
-  width: 40px;
+  width: 50px;
   margin-left: 10px;
   height: 15px;
 }

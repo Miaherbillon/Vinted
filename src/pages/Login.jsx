@@ -6,6 +6,7 @@ const Login = ({ handleToken }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  //navigation
   const navigate = useNavigate();
 
   return (
@@ -27,7 +28,6 @@ const Login = ({ handleToken }) => {
                 if (response.data.token) {
                   handleToken(response.data.token);
                   navigate("/Publish");
-                  // console.log(response);
                 }
                 console.log(response.data);
               } catch (error) {

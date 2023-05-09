@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 
 const OffersCard = ({ offer }) => {
   const { owner, product_details } = offer;
-  // console.log(offer);
 
   return (
     <Link to={`/offers/${offer._id}`}>
@@ -21,7 +20,6 @@ const OffersCard = ({ offer }) => {
             <p>{offer.product_price} €</p>
             <div>
               {product_details.map((detail, index) => {
-                // console.log(detail);
                 if (detail.MARQUE) {
                   return <p key={index}>{detail.MARQUE}</p>;
                 } else if (detail.TAILLE) {

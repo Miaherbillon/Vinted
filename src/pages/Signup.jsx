@@ -8,6 +8,7 @@ const Signup = ({ handleToken }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [newletter, setNewletter] = useState(false);
+  const [avatar, setAvatar] = useState();
 
   const navigate = useNavigate();
   return (
@@ -25,6 +26,7 @@ const Signup = ({ handleToken }) => {
                 username: username,
                 password: password,
                 newletter: newletter,
+                avatar: avatar,
               }
             );
             if (response.data.token) {
@@ -62,6 +64,14 @@ const Signup = ({ handleToken }) => {
           }}
           value={password}
         />
+        <input
+          type="file"
+          onChange={(event) => {
+            setAvatar(event.target.avatar);
+          }}
+          value={avatar}
+        />
+
         <div className="checkBox">
           <input
             id="newletter"
@@ -71,6 +81,7 @@ const Signup = ({ handleToken }) => {
             }}
             checked={newletter} // lier la checkbox
           />
+
           <label htmlFor="newletter">
             <p>Abonnement à la newletter</p>
           </label>

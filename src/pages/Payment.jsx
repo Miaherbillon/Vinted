@@ -18,9 +18,9 @@ const Paiement = () => {
     event.preventDefault();
     try {
       setLoading(true);
-      const cardElement = elements.getElement(cardElement);
+      const cardElement = elements.getElement(CardElement);
 
-      const stripeResponse = await stripe.createToken(CardElement, {
+      const stripeResponse = await stripe.createToken(cardElement, {
         name: "id de l'acheteur",
       });
       console.log(stripeResponse);
@@ -45,7 +45,7 @@ const Paiement = () => {
     }
   };
   return (
-    <>
+    <div className="pay">
       <span>{title}</span>
       <form onSubmit={handleSubmit}>
         <h1>Formulaire de paiement</h1>
@@ -58,7 +58,7 @@ const Paiement = () => {
           </button>
         )}
       </form>
-    </>
+    </div>
   );
 };
 export default Paiement;

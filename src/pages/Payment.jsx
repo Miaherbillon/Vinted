@@ -1,14 +1,19 @@
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import axios from "axios";
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const Paiement = () => {
+  //
+  const location = useLocation();
+  const { title } = location.state;
+  //
   const stripe = useStripe();
   const elements = useElements();
-
+  //
   const [isLoading, setLoading] = useState(false);
   const [completed, setCompleted] = useState(false);
-
+  //
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -40,17 +45,20 @@ const Paiement = () => {
     }
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Formulaire de paiement</h1>
-      <CardElement />
-      {completed ? (
-        <p>Paiement validé</p>
-      ) : (
-        <button type="submit" disabled={isLoading}>
-          Pay
-        </button>
-      )}
-    </form>
+    <>
+      <span>{title}</span>
+      <form onSubmit={handleSubmit}>
+        <h1>Formulaire de paiement</h1>
+        <CardElement />
+        {completed ? (
+          <p>Paiement validé</p>
+        ) : (
+          <button type="submit" disabled={isLoading}>
+            Pay
+          </button>
+        )}
+      </form>
+    </>
   );
 };
 export default Paiement;

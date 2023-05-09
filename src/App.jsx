@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Cookies from "js-cookie";
 import { useState } from "react";
 import Modal from "./components/Modal";
+//Stripe
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
-
 //pages
 import Home from "./pages/Home";
 import Offers from "./pages/Offers";
@@ -14,8 +14,7 @@ import Publish from "./pages/Publish";
 import Payment from "./pages/Payment";
 //components
 import Header from "./components/Header";
-
-//
+//Clé
 const stripePromise = loadStripe(
   "pk_test_51HCObyDVswqktOkX6VVcoA7V2sjOJCUB4FBt3EOiAdSz5vWudpWxwcSY8z2feWXBq6lwMgAb5IVZZ1p84ntLq03H00LDVc2RwP"
 );
@@ -62,15 +61,18 @@ function App() {
           />
           <Route path="/Offers/:id" element={<Offers />} />
           <Route path="/Login" element={<Login handleToken={handleToken} />} />
-          <Route path="Publish" element={<Publish token={token} />} />
-          <Route path="/Payment" element={<Payment />} />
+          <Route path="/Publish" element={<Publish token={token} />} />
+          <Route
+            path="/Payment"
+            element={
+              <Elements stripe={stripePromise}>
+                <Payment />
+              </Elements>
+            }
+          />
         </Routes>
+
         {visible && <Modal setVisible={setVisible} handleToken={handleToken} />}
-        <div>
-          {/* <Elements stripe={stripePromise}>
-            <Paiement />
-          </Elements> */}
-        </div>
       </Router>
     </div>
   );

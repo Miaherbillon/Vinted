@@ -41,7 +41,7 @@ const Publish = ({ token }) => {
           },
         }
       );
-      console.log(response.data);
+      // console.log(response.data);
       setImgFromCloudinary(response.data.secure_url);
       navigate("/");
     } catch (error) {

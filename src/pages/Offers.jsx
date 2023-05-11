@@ -43,10 +43,7 @@ const Offers = () => {
         })}
         <div className="OfferPrice">{data.product_price} €</div>
       </div>
-      <Link
-        to="/payment"
-        state={{ title: data.product_name, price: data.product_price }}
-      >
+      <Link to="/payment" state={data}>
         Acheter
       </Link>
       ;

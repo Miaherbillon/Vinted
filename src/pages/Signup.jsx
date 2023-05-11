@@ -30,7 +30,7 @@ const Signup = ({ handleToken }) => {
               }
             );
             if (response.data.token) {
-              handleToken(response.data.token);
+              handleToken(response.data.token, response.data.id);
               navigate("/Publish");
             }
 

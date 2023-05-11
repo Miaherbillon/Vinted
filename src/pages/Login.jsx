@@ -26,7 +26,7 @@ const Login = ({ handleToken }) => {
                   }
                 );
                 if (response.data.token) {
-                  handleToken(response.data.token);
+                  handleToken(response.data.token, response.data._id);
                   navigate("/Publish");
                 }
                 console.log(response.data);

@@ -1,13 +1,15 @@
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import { useState } from "react";
 import axios from "axios";
+import Cookies from "js-cookie";
 
-const CheckoutForm = ({ price, title }) => {
+const CheckoutForm = ({ product_name, product_price }) => {
   const [isLoading, setLoading] = useState(false);
   const [completed, setCompleted] = useState(false);
   //
   let stripe = useStripe();
   let elements = useElements();
+  const id = Cookies.get("VintedId");
   //
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -16,9 +18,9 @@ const CheckoutForm = ({ price, title }) => {
       const cardElement = elements.getElement(CardElement);
 
       const stripeResponse = await stripe.createToken(cardElement, {
-        name: responseFromBackend.data,
+        name: id,
       });
-      console.log(stripeResponse);
+      // console.log(stripeResponse);
 
       const stripeToken = stripeResponse.token.id;
 
@@ -26,11 +28,11 @@ const CheckoutForm = ({ price, title }) => {
         "https://lereacteur-vinted-api.herokuapp.com/payment",
         {
           token: stripeToken,
-          title: title,
-          amount: price,
+          title: product_name,
+          amount: product_price,
         }
       );
-      console.log(responseFromBackend.data);
+      // console.log(responseFromBackend);
       if (responseFromBackend.data === "succeeded") {
         setLoading(false);
         setCompleted(true);
@@ -41,8 +43,8 @@ const CheckoutForm = ({ price, title }) => {
   };
   return (
     <div className="pay">
-      <p>{title}</p>
-      <p>{price} €</p>
+      <p>{product_name}</p>
+      <p>{product_price} €</p>
       <form onSubmit={handleSubmit}>
         <h1>Formulaire de paiement</h1>
         <CardElement />

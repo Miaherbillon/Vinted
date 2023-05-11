@@ -76,7 +76,7 @@ const Header = ({
       {token ? (
         <button
           onClick={() => {
-            handleToken(null);
+            handleToken(null, null);
           }}
         >
           Se deconnecter

@@ -20,13 +20,15 @@ function App() {
   const [maxPrice, setMaxPrice] = useState(1000);
   const [minPrice, setMinPrice] = useState(0);
 
-  const handleToken = (token) => {
-    if (token) {
+  const handleToken = (token, id) => {
+    if (token && id) {
       setToken(token);
-      Cookies.set("vintedToken", token, { expires: 14 });
+      Cookies.set("vintedToken", token, { expires: 14, sameSite: "Strict" });
+      Cookies.set("VintedId", id, { expires: 14 });
     } else {
       setToken(null);
       Cookies.remove("vintedToken");
+      Cookies.remove("VintedId");
     }
   };
 
@@ -56,7 +58,7 @@ function App() {
           <Route path="/Offers/:id" element={<Offers />} />
           <Route path="/Login" element={<Login handleToken={handleToken} />} />
           <Route path="/Publish" element={<Publish token={token} />} />
-          <Route path="/Payment" element={<Payment />} />
+          <Route path="/Payment" element={<Payment token={token} />} />
         </Routes>
 
         {visible && <Modal setVisible={setVisible} handleToken={handleToken} />}

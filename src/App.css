@@ -46,7 +46,6 @@ img {
   flex-wrap: wrap;
   display: flex;
   justify-content: center;
-  /* border: rebeccapurple solid 2px; */
 }
 
 article {
@@ -262,9 +261,9 @@ form p {
   text-align: center;
   margin-bottom: 20px;
 }
-/*---------------------------*/
+/*----------------------*/
 /*---------Pubish-------*/
-/*---------------------------*/
+/*----------------------*/
 
 .publish {
   border: solid rgba(128, 128, 128, 0.401) 1px;
@@ -316,7 +315,7 @@ form p {
   border-radius: 10px;
   text-align: center;
   margin: 100px auto;
-  padding-top: 50px;
+  padding: 50px;
   width: 30vw;
 }
 /*---------------------------*/
@@ -325,7 +324,6 @@ form p {
 
 @media (max-width: 1000px) {
   .router button {
-    /* width: 10vw; */
     height: 30px;
     margin: 10px;
     margin-top: 0px;

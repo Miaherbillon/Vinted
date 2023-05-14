@@ -12,22 +12,24 @@ const stripePromise = loadStripe(
 );
 
 const Paiement = ({ token }) => {
-  const location = useLocation();
-  // console.log(location);
-  const { product_name, product_price } = location.state;
+  const { product_name, product_price } = useLocation().state;
 
   return (
     <>
       {token ? (
-        <Elements stripe={stripePromise}>
-          <div></div> <div></div>
-          <CheckoutForm
-            product_name={product_name}
-            product_price={product_price}
-          />
-        </Elements>
+        <div>
+          <h1>Résumé de la commande</h1>
+          <p>Prix de la commande : {product_price} €</p>
+          <p>Vous allez acheter : {product_name}</p>
+          <Elements stripe={stripePromise}>
+            <CheckoutForm
+              product_name={product_name}
+              product_price={product_price}
+            />
+          </Elements>
+        </div>
       ) : (
-        <Navigate to="/Login" />
+        <Navigate to="/login" />
       )}
     </>
   );

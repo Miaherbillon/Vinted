@@ -1,30 +1,33 @@
-import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
+import {
+  useStripe,
+  useElements,
+  CardCvcElement,
+  CardExpiryElement,
+  CardNumberElement,
+} from "@stripe/react-stripe-js";
 import { useState } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
 
 const CheckoutForm = ({ product_name, product_price }) => {
-  const [isLoading, setLoading] = useState(false);
-  const [completed, setCompleted] = useState(false);
-  //
-  let stripe = useStripe();
-  let elements = useElements();
-  const id = Cookies.get("VintedId");
-  //
+  const [paymentStatus, setPaymentStatus] = useState(0); // 0 = pas encore cliqué, 1 = en attente de réponse, 2 = OK, 3 = Error
+
+  const stripe = useStripe();
+  const elements = useElements();
+  const id = Cookies.get("vintedId");
+
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setPaymentStatus(1);
     try {
-      setLoading(true);
-      const cardElement = elements.getElement(CardElement);
-
+      const cardElement = elements.getElement(CardNumberElement);
       const stripeResponse = await stripe.createToken(cardElement, {
         name: id,
       });
-      // console.log(stripeResponse);
 
       const stripeToken = stripeResponse.token.id;
 
-      const responseFromBackend = await axios.post(
+      const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/payment",
         {
           token: stripeToken,
@@ -33,30 +36,31 @@ const CheckoutForm = ({ product_name, product_price }) => {
         }
       );
       // console.log(responseFromBackend);
-      if (responseFromBackend.data === "succeeded") {
-        setLoading(false);
-        setCompleted(true);
+      if (response.data === "succeeded") {
+        setPaymentStatus(2);
       }
     } catch (error) {
       console.log(error.message);
+      setPaymentStatus(3);
     }
   };
   return (
-    <div className="pay">
-      <p>{product_name}</p>
-      <p>{product_price} €</p>
-      <form onSubmit={handleSubmit}>
-        <h1>Formulaire de paiement</h1>
-        <CardElement />
-        {completed ? (
-          <p>Paiement validé</p>
-        ) : (
-          <button type="submit" disabled={isLoading}>
-            Pay
-          </button>
-        )}
-      </form>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <CardNumberElement />
+      <CardExpiryElement />
+      <CardCvcElement />
+      {paymentStatus === 2 ? (
+        <p>Paiement validé</p>
+      ) : (
+        <button type="submit" disabled={paymentStatus === 1}>
+          Payer !
+        </button>
+      )}
+
+      {paymentStatus === 3 && (
+        <p>Une erreur est survenue, veuillez réessayer !</p>
+      )}
+    </form>
   );
 };
 export default CheckoutForm;

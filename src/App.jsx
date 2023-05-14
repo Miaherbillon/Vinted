@@ -56,7 +56,7 @@ function App() {
             }
           />
           <Route path="/Offers/:id" element={<Offers />} />
-          <Route path="/Login" element={<Login handleToken={handleToken} />} />
+          <Route path="/login" element={<Login handleToken={handleToken} />} />
           <Route path="/Publish" element={<Publish token={token} />} />
           <Route path="/Payment" element={<Payment token={token} />} />
         </Routes>

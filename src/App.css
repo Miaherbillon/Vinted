@@ -182,7 +182,7 @@ textarea {
   margin: 20px 0px;
 }
 
-form {
+.connexionBox form {
   margin: 50px;
   display: flex;
   flex-direction: column;
@@ -316,7 +316,23 @@ form p {
   text-align: center;
   margin: 100px auto;
   padding: 50px;
-  width: 30vw;
+  width: 50vw;
+}
+.buttonpay {
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+  height: fit-content;
+  padding: 10px;
+}
+
+.buttonpay:hover {
+  background-color: rgba(128, 128, 128, 0.086);
+}
+.pay form {
+  margin: 30px;
 }
 /*---------------------------*/
 /*---------Respoonsive-------*/

@@ -39,6 +39,7 @@ const Header = ({
       <Link to="/">
         <img src={Logo} alt="Logo vinted" />
       </Link>
+
       <div>
         <input
           type="text"

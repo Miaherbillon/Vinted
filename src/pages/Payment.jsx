@@ -17,7 +17,7 @@ const Paiement = ({ token }) => {
   return (
     <>
       {token ? (
-        <div className="pay">
+        <div className="none pay">
           <h1>Résumé de la commande</h1>
           <p>Prix de la commande : {product_price} €</p>
           <p>Vous allez acheter : {product_name}</p>

@@ -306,14 +306,24 @@ form p {
   display: flex;
   margin-left: 30px;
 }
-
+.pay h1 {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.pay p {
+  font-size: 20px;
+  margin: 15px 0px;
+  justify-content: none;
+  padding-left: 30px;
+}
 /*---------------------------*/
 /*---------Paiement----------*/
 /*---------------------------*/
 .pay {
   border: 1px gray solid;
   border-radius: 10px;
-  text-align: center;
+
   margin: 100px auto;
   padding: 50px;
   width: 50vw;
@@ -334,6 +344,7 @@ form p {
 .pay form {
   margin: 30px;
 }
+
 /*---------------------------*/
 /*---------Respoonsive-------*/
 /*---------------------------*/
